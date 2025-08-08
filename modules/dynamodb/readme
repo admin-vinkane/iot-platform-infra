@@ -1,0 +1,14 @@
+Yes, this script will allow you to store states, districts, mandals, and villages in a single DynamoDB table (v_regions) using a hierarchical, single-table design.
+
+v_regions.tf
+
+How it works:
+
+Use the pk (partition key) and sk (sort key) to encode the hierarchy.
+Example items:
+State: pk = STATE#AP, sk = METADATA
+District: pk = DISTRICT#GNT, sk = STATE#AP
+Mandal: pk = MANDAL#GNT-1, sk = DISTRICT#GNT
+Village: pk = VILLAGE#GNT-1-1, sk = MANDAL#GNT-1
+You must ensure your application code writes items in this format.
+This table structure is flexible and scalable for hierarchical administrative regions.
