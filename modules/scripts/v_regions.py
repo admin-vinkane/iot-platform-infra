@@ -12702,18 +12702,18 @@ def generate_all_items():
                         ancestry
                     ))
 
-                    for hab_code, hab_name in habitations.get(village_code, {}).items():
-                        ancestry = [state_code, dist_code, mandal_code, village_code, hab_code]
-                        items.append(make_item(
-                            f"REGION#{state_code}",
-                            f"HABITATION#{hab_code}",
-                            "Habitation",
-                            hab_name,
-                            hab_code,
-                            village_code,
-                            5,
-                            ancestry
-                        ))
+                    # for hab_code, hab_name in habitations.get(village_code, {}).items():
+                    #     ancestry = [state_code, dist_code, mandal_code, village_code, hab_code]
+                    #     items.append(make_item(
+                    #         f"REGION#{state_code}",
+                    #         f"HABITATION#{hab_code}",
+                    #         "Habitation",
+                    #         hab_name,
+                    #         hab_code,
+                    #         village_code,
+                    #         5,
+                    #         ancestry
+                    #     ))
     return items
 
 
